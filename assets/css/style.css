@@ -260,6 +260,28 @@ nav.light a:hover {
   }
 }
 
+/* ===== WEATHER RESULT ===== */
+.weather-result {
+  margin-top: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   nav.light {
