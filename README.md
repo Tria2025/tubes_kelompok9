@@ -40,6 +40,29 @@
   * Prakiraan cuaca beberapa hari ke depan
   * Tampilan kartu forecast yang interaktif
 
+  **Penggunaan & Endpoint**
+
+  * Halaman `forecast.php` menyediakan form untuk memasukkan nama kota dan menampilkan ringkasan prakiraan harian.
+  * Endpoint server: `/forecast_api.php?city={nama_kota}` — merelay permintaan ke OpenWeather `/forecast` dan mengembalikan ringkasan harian (min/max, deskripsi, ikon).
+  * Contoh curl:
+
+    ```bash
+    curl "http://localhost/tubes_kelompok9/forecast_api.php?city=Jakarta"
+    ```
+
+  * Respons JSON (ringkasan):
+
+    ```json
+    {
+      "city": "Jakarta",
+      "country": "ID",
+      "forecast": [
+        {"date":"2025-12-16","temp":30,"temp_min":27,"temp_max":31,"description":"Cerah","icon":"01d"},
+        {...}
+      ]
+    }
+    ```
+
 * **About Page**
 
   * Deskripsi aplikasi
