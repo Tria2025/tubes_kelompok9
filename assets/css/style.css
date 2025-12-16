@@ -462,6 +462,118 @@ body.dark .search-box button:hover {
   color: #4b5563;
 }
 
+/* Centered grid wrapper for forecast cards */
+.forecast-grid-inner {
+  display: grid;
+  /* Force exactly 5 cards in a single row */
+  grid-template-columns: repeat(5, minmax(160px, 220px));
+  gap: 18px;
+  align-items: start;
+  margin: 18px auto 0 auto;
+  width: 100%;
+  max-width: 1200px; /* keep a comfortable max width */
+  justify-content: center; /* center the whole row */
+  overflow-x: auto; /* allow horizontal scroll on small screens */
+  -webkit-overflow-scrolling: touch;
+}
+
+.forecast-header {
+  text-align: center;
+  margin-top: 18px;
+}
+.forecast-header h2 { font-size:20px; margin-bottom:6px }
+.forecast-header small { color:#6b7280 }
+
+/* Ensure forecastResult centers its contents (header + grid) */
+#forecastResult {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center header and inner grid horizontally */
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* Small tweak so grid items center within their columns on small screens */
+.forecast-grid-inner { justify-items: center }
+
+/* Make horizontal scroll look nicer */
+.forecast-grid-inner::-webkit-scrollbar { height:8px }
+.forecast-grid-inner::-webkit-scrollbar-thumb { background:#e5e7eb; border-radius:8px }
+.forecast-grid-inner::-webkit-scrollbar-track { background:transparent }
+
+/* Card inner flip */
+.forecast-card .card-inner {
+  perspective: 800px;
+}
+.forecast-card .card-inner > div {
+  backface-visibility: hidden;
+  transition: transform .5s;
+}
+.forecast-card .card-front {
+  transform: rotateY(0deg);
+}
+.forecast-card.flipped .card-front {
+  transform: rotateY(180deg);
+}
+.forecast-card .card-back {
+  position: relative;
+  transform: rotateY(-180deg);
+}
+.forecast-card.flipped .card-back {
+  transform: rotateY(0deg);
+}
+
+/* small buttons */
+.btn-small {
+  margin-top: 10px;
+  background: #f97316;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-small:hover { background:#ea580c }
+
+/* temperature range bar */
+.temp-bar {
+  height: 8px;
+  background: #eef2ff;
+  border-radius: 10px;
+  margin-top: 10px;
+  position: relative;
+}
+.temp-fill {
+  position: absolute;
+  top: 0; bottom: 0;
+  background: linear-gradient(90deg,#f97316,#fb923c);
+  border-radius: 10px;
+}
+
+/* modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2,6,23,0.6);
+  z-index: 2000;
+}
+.modal.active { display:flex }
+.modal .modal-card {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 14px;
+  max-width: 720px;
+  width: 95%;
+}
+.modal .hourly-item { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #f1f5f9 }
+.modal .hourly-item:last-child { border-bottom:none }
+
+body.dark .modal .modal-card { background:#020617; color:#e5e7eb }
+
 /* DARK MODE FORECAST */
 body.dark .forecast-card {
   background: #020617;
