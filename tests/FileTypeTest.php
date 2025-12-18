@@ -7,10 +7,10 @@ class FileTypeTest extends TestCase
      * file lain belum dikembangkan
      * */
     private $projectFiles = [
-    'index.php'
-    // 'weather.php',
-    // 'forecast.php',
-    // 'about.php'
+    'index.php',
+    'weather.php',
+    'forecast.php',
+    'about.php'
     ];
 
     /** TestCase-01: File Exist (Memastikan file ada) */
