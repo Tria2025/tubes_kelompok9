@@ -225,14 +225,14 @@ Pengujian dilakukan berdasarkan materi **System Test & CI/CD** dan diimplementas
 
 ### Tabel Test Case
 
-| No    | Test Case                   | Jenis        | Skenario                                                                 | Expected Result                                  |
-| ----- | --------------------------- | ------------ | ------------------------------------------------------------------------ | ------------------------------------------------ |
-| TC-01 | File Exist                  | Black Box    | Mengecek keberadaan file `index.php`                                     | File `index.php` ditemukan                      |
-| TC-02 | PHP File Contains PHP Code  | White Box    | Membaca isi file PHP dan mengecek adanya tag `<?php`                     | File mengandung kode PHP                        |
-| TC-03 | HTML Structure Validation   | White Box    | Mengecek apakah file PHP mengandung struktur HTML dasar                  | Struktur HTML valid terdeteksi                  |
-| TC-04 | API Key Tidak Kosong        | White Box    | Mengecek file `.env` dan variabel `OPENWEATHER_API_KEY`                  | API Key ditemukan dan tidak kosong              |
-| TC-05 | Valid JSON Response         | Integration  | Melakukan request ke OpenWeather API                                     | Response berupa JSON valid                      |
-| TC-06 | HTTP Response Code 200      | Integration  | Mengecek HTTP response code dari OpenWeather API                         | Status response = 200 OK                        |
+| No    | Test Case                   | Jenis                         | Skenario                                                                 | Expected Result                                  |
+| ----- | --------------------------- | ----------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------ |
+| TC-01 | File Exist                  | (System Test) White Box       | Mengecek keberadaan file `index.php`                                     | File `index.php` ditemukan                       |
+| TC-02 | PHP File Contains PHP Code  | (System Test) White Box       | Membaca isi file PHP dan mengecek adanya tag `<?php`                     | File mengandung kode PHP                         |
+| TC-03 | HTML Structure Validation   | (System Test) White Box       | Mengecek apakah file PHP mengandung struktur HTML dasar                  | Struktur HTML valid terdeteksi                   |
+| TC-04 | API Key Tidak Kosong        | (System Test) White Box       | Mengecek file `.env` dan variabel `OPENWEATHER_API_KEY`                  | API Key ditemukan dan tidak kosong               |
+| TC-05 | Valid JSON Response         | (Integration Test) Black Box  | Melakukan request ke OpenWeather API                                     | Response berupa JSON valid                       |
+| TC-06 | HTTP Response Code 200      | (Integration Test) Black Box  | Mengecek HTTP response code dari OpenWeather API                         | Status response = 200 OK                         |
 
 Pengujian ini bersifat **incremental** dan akan diperluas setelah seluruh halaman (`weather.php`, `forecast.php`, `about.php`) selesai dikembangkan.
 
